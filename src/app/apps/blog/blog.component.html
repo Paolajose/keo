@@ -1,0 +1,72 @@
+<div
+  class="static-slider-head"
+  style="background-image: url(assets/images/landingpage/banner-bg.jpg)"
+>
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 align-self-center text-center no-trans">
+        <h1 class="title">Bienvenidos a Keo</h1>
+        <h5 class="subtitle op-5">
+          En un mundo que esta en constante cambio es indispensable adaptarse..
+        </h5>
+
+        <a
+          href="https://www.wrappixel.com/free-wrapkit-angular-blog"
+          class="btn btn-md m-t-30 btn-success-gradiant font-14"
+          target="blank"
+          >Vamos</a
+        >
+      </div>
+      <!-- Column -->
+    </div>
+  </div>
+</div>
+
+<!-- Row  -->
+<div class="container spacer">
+  <div class="row justify-content-center">
+    <!-- Column -->
+    <div class="col-md-8 no-trans text-center">
+      <h2 class="title">Nuestros Blogs mas recientes</h2>
+      <h6 class="subtitle">
+        Puede contar con nuestra increíble lista de características y también con nuestro cliente.
+        Los servicios serán una gran experiencia para usted sin duda y en poco tiempo.
+      </h6>
+    </div>
+    <!-- Column -->
+  </div>
+  <div class="row m-t-40 justify-content-center">
+    <!-- Column -->
+    <div
+      class="col-md-8 no-trans border-bottom mb-4"
+      *ngFor="let bl of service.Blogs"
+    >
+      <div class="card" data-aos="flip-left" data-aos-duration="1200">
+        <div class="row">
+          <div class="col-md-2 no-trans">
+            <span class="text-dark font-medium">{{ bl.blogDate }}</span>
+            <h6 class="card-subtitle font-12 mt-1">By Jose y Javier</h6>
+          </div>
+          <div class="col-md-7 no-trans">
+            <h5 class="font-medium cursor-pointer" (click)="viewDetail(bl.id)">
+              {{ bl.heading.substring(0, 50) }}..
+            </h5>
+            <p class="m-t-20">
+              {{ bl.subHeading }}
+            </p>
+          </div>
+          <div class="col-md-3 no-trans">
+            <a
+              class="linking font-medium text-themecolor m-t-10 cursor-pointer"
+            >
+              <span (click)="viewDetail(bl.id)">Mas detalles</span>
+              <i class="ti-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
